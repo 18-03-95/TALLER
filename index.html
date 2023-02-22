@@ -1,3 +1,65 @@
-<hl> Ciudad Mitad Del Mundo  </hl> 
-<img src=" https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Ciudad_Mitad_del_Mundo.jpg/800px-Ciudad_Mitad_del_Mundo.jpg” 
-     alt="Monumento a la Expidicion Francesa" width="400" height="453" />
+< h1  style =" color:blue; " > Ciudad Mitad del Mundo </ h1 >
+< img  src =" https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Ciudad_Mitad_del_Mundo.jpg/270px-Ciudad_Mitad_del_Mundo.jpg "
+     alt =" Monumento a la expedición Francesa " ancho =" 400 " alto =" 453 " />
+
+< cuerpo >
+
+    < h1 > Calculadora de Distancia a la Mitad del Mundo </ h1 >
+
+    < p > Su ubicación actual: < span  id =" ubicación " > </ span > </ p >
+
+    < p > Distancia a la mitad del mundo: < span  id =" distancia " > </ span > </ p >
+
+
+
+    < guión >
+
+      // Obtener la ubicación actual
+
+      navegante _ geolocalización _ getPosiciónActual ( función  ( posición )  {
+
+        var  lat1  =  posición . coordenadas _ latitud ;
+
+        var  lon1  =  posición . coordenadas _ longitud ;
+
+
+
+        // La ubicación de Quito es ??
+
+        var  lat2  =  - 0.0102496  ;
+
+        var  lon2  =  - 78.4464668 ;
+
+
+
+        // Función para calcular la distancia en kilómetros
+
+        varR  = 6371 ; _  // Radio de la Tierra (km)  
+
+        var  dLat  =  ( lat2  -  lat1 )  *  ( Math . PI  /  180 ) ;
+
+        var  dLon  =  ( lon2  -  lon1 )  *  ( Math . PI  /  180 ) ;
+
+        var  a  =  Matemáticas . sin ( dLat  /  2 )  *  Math . pecado ( dLat  /  2 )  +
+
+                matemáticas _ cos ( lat1  *  ( Math . PI  /  180 ) )  *  Math . cos ( lat2  *  ( matemáticas . PI  /  180 ) )  *
+
+                matemáticas _ pecado ( dLon  /  2 )  *  Math . pecado ( dLon  /  2 ) ;
+
+        var  c  =  2  *  Matemáticas . atan2 ( Math . sqrt ( a ) ,  Math . sqrt ( 1  -  a ) ) ;
+
+        var  d  =  R  *  c ;
+
+
+
+        // Mostrar la distancia en la página
+
+        documento _ getElementById ( "ubicación" ) . HTML interno  =  lat1  +  ", "  +  lon1 ;
+
+        documento _ getElementById ( "distancia" ) . HTML interno  =  d  +  "km" ;
+
+      } ) ;
+
+    </ guión >
+
+  </ cuerpo >
